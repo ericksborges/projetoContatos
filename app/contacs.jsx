@@ -1,8 +1,8 @@
 import { View, FlatList } from "react-native";
-import ContactCard from "../components/contactcard";
 import ContactDetails from "./information";
 import { contactList } from "../constants/data";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import CardContatos from '../components/CardContatos'
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +13,7 @@ function ContactListScreen({ navigation }) {
         data={contactList}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <ContactCard
+          <CardContatos
             item={item}
             onPress={() => navigation.navigate("Detalhes", { item })}
           />
